@@ -997,8 +997,8 @@ async def account_login(bot: Client, m: Message):
         logging.error(e)
 
         await m.reply_text(e)
-    return await m.reply_text("Done")
-                if "pdf" or ".pdf" in url1:
+    await m.reply_text("Done")
+                if "pdf" in url1:
                     await m.reply_document(filename, caption=cc)
                 else:
                     await m.reply_video(filename,
