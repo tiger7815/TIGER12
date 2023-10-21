@@ -923,7 +923,7 @@ async def account_login(bot: Client, m: Message):
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
             cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin'
-            if ".pdf" or "download" in url or ".pdf" or "pdf" in name:
+            if ".pdf" or "download" in url:
                 cmd = "pdf"
             else:
                 cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
@@ -956,6 +956,48 @@ async def account_login(bot: Client, m: Message):
                 dur = int(helper.duration(filename))
 
                 start_time = time.time()
+                if cmd == "pdf" or ".pdf" in url or ".pdf" in name:
+                    try:
+                        ka = await helper.aio(url, name)
+                        await prog.delete(True)
+                        time.sleep(1)
+                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        time.sleep(1)
+                        start_time = time.time()
+                        await m.reply_document(
+                            ka,
+                            caption=
+                            f"**Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
+                        )
+                        count += 1
+                        # time.sleep(1)
+                        await reply.delete(True)
+                        time.sleep(1)
+                        os.remove(ka)
+                        time.sleep(3)
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        continue
+                else:
+                    res_file = await helper.download_video(url, cmd, name)
+                    filename = res_file
+                    await helper.send_vid(bot, m, cc, filename, thumb, name,
+                                          prog)
+                    count += 1
+                    time.sleep(1)
+
+            except Exception as e:
+                await m.reply_text(
+                    f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                )
+                continue
+
+    except Exception as e:
+        logging.error(e)
+
+        await m.reply_text(e)
+    return await m.reply_text("Done")
                 if "pdf" or ".pdf" in url1:
                     await m.reply_document(filename, caption=cc)
                 else:
