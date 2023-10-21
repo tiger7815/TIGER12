@@ -58,9 +58,9 @@ bot = Client("bot",
              bot_token=os.environ.get("BOT_TOKEN"),
              api_id=int(os.environ.get("API_ID")),
              api_hash=os.environ.get("API_HASH"))
-auth_users = [5699060814,6172397014]
+auth_users = [5908818236,5942085615]
 sudo_users = auth_users
-sudo_groups = [-4005748655]
+sudo_groups = [-1001850795382]
 
 shell_usage = f"**USAGE:** Executes terminal commands directly via bot.\n\n<pre>/shell pip install requests</pre>"
 def one(user_id):
@@ -923,8 +923,8 @@ async def account_login(bot: Client, m: Message):
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
             cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin'
-            if ".pdf" or "download" in url:
-                cmd = "pdf"
+            if "pdf" in url:
+                cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
             else:
                 cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
             try:
@@ -956,52 +956,10 @@ async def account_login(bot: Client, m: Message):
                 dur = int(helper.duration(filename))
 
                 start_time = time.time()
-                if cmd == "pdf" or ".pdf" in url or ".pdf" in name:
-                    try:
-                        ka = await helper.aio(url, name)
-                        await prog.delete(True)
-                        time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
-                        time.sleep(1)
-                        start_time = time.time()
-                        await m.reply_document(
-                            ka,
-                            caption=
-                            f"**Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
-                        )
-                        count += 1
-                        # time.sleep(1)
-                        await reply.delete(True)
-                        time.sleep(1)
-                        os.remove(ka)
-                        time.sleep(3)
-                    except FloodWait as e:
-                        await m.reply_text(str(e))
-                        time.sleep(e.x)
-                        continue
+                if "pdf" in url1:
+                    await m.reply_document(filename, caption=cc)
                 else:
-                    res_file = await helper.download_video(url, cmd, name)
-                    filename = res_file
-                    await helper.send_vid(bot, m, cc, filename, thumb, name,
-                                          prog)
-                    count += 1
-                    time.sleep(1)
-
-            except Exception as e:
-                await m.reply_text(
-                    f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
-                )
-                continue
-
-    except Exception as e:
-        logging.error(e)
-
-        await m.reply_text(e)
-    await m.reply_text("Done")
-    if "pdf" in url1:
-        await m.reply_document(filename, caption=cc)
-    else:
-        await m.reply_video(filename,
+                    await m.reply_video(filename,
                                         supports_streaming=True,
                                         height=720,
                                         width=1280,
@@ -1010,12 +968,21 @@ async def account_login(bot: Client, m: Message):
                                         thumb=thumbnail,
                                         progress=progress_bar,
                                         progress_args=(reply, start_time))
-        count += 1
-        os.remove(filename)
+                count += 1
+                os.remove(filename)
 
-        os.remove(f"{filename}.jpg")
-        time.sleep(1)
-        return await reply.delete(True)
+                os.remove(f"{filename}.jpg")
+                await reply.delete(True)
+                time.sleep(1)
+            except Exception as e:
+                await m.reply_text(
+                    f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}` & `{url1}`"
+                )
+                continue
+    except Exception as e:
+        await m.reply_text(e)
+    await m.reply_text("Done")
+
 
 @bot.on_message(filters.command(["top"]))
 async def account_login(bot: Client, m: Message):
