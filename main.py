@@ -67,6 +67,8 @@ def one(user_id):
     if user_id in sudo_users:
         return True
     return False
+async def delete_my_messages(chat_id, message_ids):
+    await bot.delete_messages(chat_id, message_ids)
 @bot.on_message(filters.command(["shell"]))
 async def shell(client, message: Message):
     """
@@ -978,6 +980,9 @@ async def account_login(bot: Client, m: Message):
                 await bot.send_document(chat_id=m.from_user.id,document=url)
                 continue
     except Exception as e:
+        chat_id = m.chat.id
+        message_id = m.message_id
+        await delete_my_messages(chat_id, message_id)
         await m.reply_text(e)
     await m.reply_text("Done")
 
