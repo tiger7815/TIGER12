@@ -1017,12 +1017,12 @@ async def account_login(bot: Client, m: Message):
         time.sleep(1)
         return await reply.delete(True)
     except Exception as e:
-            await m.reply_text(
+        await m.reply_text(
                     f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}` & `{url1}`"
                 )
-                continue
+           continue
     except Exception as e:
-            await m.reply_text(e)
+        await m.reply_text(e)
         await m.reply_text("Done")
 
 
