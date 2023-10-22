@@ -7,7 +7,7 @@ ffmpeg
 aiohttp
 aiofiles
 asyncio
-pycurl
+pycurl==7.43.0.1
 humanize
 
 cryptg
