@@ -150,7 +150,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}")
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -172,7 +172,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(
-        f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**"
+        f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0** \n\n Dev : Loser 💔"
     )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
@@ -186,7 +186,7 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
 
-    await m.reply_text("**Enter resolution**")
+    await m.reply_text("**Enter resolution \n e.g- `240` , `360` , etc...**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
@@ -412,7 +412,7 @@ async def account_login(bot: Client, m: Message):
                 #                         await prog.delete (True)
                 #                         time.sleep(1)
                 #                         # await helper.send_doc(bot,m,cc,ka,cc1,prog,count,name)
-                #                         reply = await m.reply_text(f"Uploading - `{name}`")
+                #                         reply = await m.reply_text(f"Uploading - `{name}` \n\n Dev : Loser 💔")
                 #                         time.sleep(1)
                 #                         start_time = time.time()
                 #                         await m.reply_document(ka,caption=cc1)
@@ -430,13 +430,13 @@ async def account_login(bot: Client, m: Message):
                         ka = await helper.aio(url, name)
                         await prog.delete(True)
                         time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        reply = await m.reply_text(f"Uploading - ```{name}``` \n\n Dev : Loser 💔")
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(
                             ka,
                             caption=
-                            f"**Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
+                            f"**Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 - 𝐋𝐎𝐒𝐄𝐑 💔"
                         )
                         count += 1
                         # time.sleep(1)
@@ -477,7 +477,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am Mrshiv Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}")
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -496,7 +496,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(
-        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**"
+        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1** \n\n Dev : Loser 💔"
     )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
@@ -527,7 +527,7 @@ async def account_login(bot: Client, m: Message):
             name = f'{str(count).zfill(3)}) {name1}'
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             prog = await m.reply_text(Show)
-            cc = f'**Name »** {name1}.mp4\n**Batch »** {raw_text5}\n**Index »** {str(count).zfill(3)}'
+            cc = f'**Name »** {name1}.mp4\n**Batch »** {raw_text5}\n**Index »** {str(count).zfill(3)} \n\n 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 - 𝐋𝐎𝐒𝐄𝐑 💔'
             if "youtu" in url:
                 cmd = f'yt-dlp -f best "{url}" -o "{name}"'
             elif "player.vimeo" in url:
@@ -560,7 +560,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am vision ias Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
