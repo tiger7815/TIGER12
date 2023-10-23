@@ -580,7 +580,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(
-        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**"
+        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**\n\n Dev : Loser 💔"
     )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
@@ -612,7 +612,7 @@ async def account_login(bot: Client, m: Message):
             name = f'{str(count).zfill(3)}) {name1}'
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             prog = await m.reply_text(Show)
-            cc = f'**Name »** {name1}.mp4\n**Batch »** {raw_text5}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin'
+            cc = f'**Name »** {name1}.mp4\n**Batch »** {raw_text5}\n**Index »** {str(count).zfill(3)}\n\n\n e.g- `240` , `360` , etc...
             if "vision" or "youtu" in url:
                 cmd = f'yt-dlp "{url}" -o "{name}"'
             elif "player.vimeo" in url:
@@ -645,7 +645,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am adda pdf Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -699,7 +699,7 @@ async def account_login(bot: Client, m: Message):
             name = f'{str(count).zfill(3)} {name1}'
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`"
             prog = await m.reply_text(Show)
-            cc = f'{str(count).zfill(3)}. {name1}.pdf\n'
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n Dev : Loser 💔'
             try:
                 getstatusoutput(
                     f'curl --http2 -X GET -H "Host:store.adda247.com" -H "user-agent:Mozilla/5.0 (Linux; Android 11; moto g(40) fusion Build/RRI31.Q1-42-51-8; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/97.0.4692.98 Mobile Safari/537.36" -H "accept:*/*" -H "x-requested-with:com.adda247.app" -H "sec-fetch-site:same-origin" -H "sec-fetch-mode:cors" -H "sec-fetch-dest:empty" -H "referer:https://store.adda247.com/build/pdf.worker.js" -H "accept-encoding:gzip, deflate" -H "accept-language:en-US,en;q=0.9" -H "cookie:cp_token={raw_text5}" "{url}" --output "{name}.pdf"'
@@ -727,7 +727,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am Oliveboard Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -747,7 +747,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(
-        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**"
+        f"Total Videos found in this Course are **{len(content)}**\n\nSend From where you want to download initial is **1**\n\n Dev : Loser 💔"
     )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
@@ -813,7 +813,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am jw Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -850,7 +850,7 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
 
-    await m.reply_text("**Enter resolution**")
+    await m.reply_text("**Enter resolution**\n e.g- `240` , `360` , etc...")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
@@ -924,7 +924,7 @@ async def account_login(bot: Client, m: Message):
             name = f'{str(count).zfill(3)}) {name1}'
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
-            cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin'
+            cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 - 𝐋𝐎𝐒𝐄𝐑'
             if "pdf" in url:
                 cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
             else:
@@ -995,7 +995,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am top Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
+            "Developer : Loser 💔💔\n@Aspirant_hub_bot\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -1018,7 +1018,7 @@ async def account_login(bot: Client, m: Message):
         os.remove(x)
         return
 
-    editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
+    editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**\n\n Dev : Loser 💔")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
 
@@ -1089,7 +1089,7 @@ async def account_login(bot: Client, m: Message):
             name = f'{str(count).zfill(3)}) {name1}'    
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n**rout** :- `{rout}`"
             prog = await m.reply_text(Show)
-            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text5}\n**Index »** {str(count).zfill(3)}'
+            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text5}\n**Index »** {str(count).zfill(3)}\n\n𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 - 𝐋𝐎𝐒𝐄𝐑'
             
             cmd = f'yt-dlp -o "{name}.mp4" --cookies {cook} "{url}"'
             try:
