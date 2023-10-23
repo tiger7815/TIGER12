@@ -931,7 +931,7 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_document(HRituX)
             else:
                 cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
-                HRituX = f"{name}.mp4
+                HRituX = f"{name}.mp4"
                 await m.reply_video(HRituX)
             try:
                 download_cmd = f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
