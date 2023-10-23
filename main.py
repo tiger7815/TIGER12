@@ -926,9 +926,9 @@ async def account_login(bot: Client, m: Message):
             prog = await m.reply_text(Show)
             cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n '
             if "pdf" in url:
-                cmd = f'youtube-dl -o "{name}.pdf" "{url1}"'
+                cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
             else:
-                cmd = f'youtube-dl -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
+                cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
             try:
                 download_cmd = f"{cmd} -R 25 --fragment-retries 25 --throttled-rate 10k --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
                 os.system(download_cmd)
