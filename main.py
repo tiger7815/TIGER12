@@ -927,12 +927,8 @@ async def account_login(bot: Client, m: Message):
             cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n '
             if "pdf" in url:
                 cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
-                HRituX = f"{name}.pdf"
-                await m.reply_document(HRituX)
             else:
                 cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
-                HRituX = f"{name}.mp4"
-                await m.reply_video(HRituX)
             try:
                 download_cmd = f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
                 os.system(download_cmd)
@@ -947,7 +943,7 @@ async def account_login(bot: Client, m: Message):
 
 #                 filename = f"{name}.mkv"
                 subprocess.run(
-                    f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
+                    f'ffmpeg -preset ultrafast -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
                     shell=True)
                 await prog.delete(True)
                 reply = await m.reply_text(f"Uploading - ```{name}```")
