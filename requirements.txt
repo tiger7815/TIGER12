@@ -11,5 +11,5 @@ youtube-dl
 pycurl
 humanize
 cryptg
-telethon
+
 python-decouple
